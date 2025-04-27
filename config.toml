@@ -20,8 +20,4 @@ title = 'HappyMod'
     [markup.goldmark.renderer]
       unsafe = true
 
-# Add the module configuration from config.toml
-[module]
-  [[module.mounts]]
-    source = "assets"
-    target = "assets"
+
