@@ -1,0 +1,43 @@
+{{ define "main" }}
+<div class="home-container">
+  <h1>Welcome to {{ .Site.Title }}</h1>
+  <p>{{ .Site.Params.description }}</p>
+  
+  <div class="featured-apps">
+    <h2>Featured Applications</h2>
+    <div class="apps-grid">
+      {{ range first 6 (where .Site.RegularPages "Section" "app") }}
+      <div class="app-card">
+        <div class="app-card-logo">
+          {{ if .Params.appLogo }}
+            <img src="{{ .Params.appLogo }}" alt="{{ .Params.appName }} Logo">
+          {{ else }}
+            <img src="/images/default-app-logo.png" alt="Default App Logo">
+          {{ end }}
+        </div>
+        
+        <div class="app-card-info">
+          <h2>{{ .Params.appName | default .Title }}</h2>
+          {{ if .Params.appVersion }}
+            <span class="app-version">Version: {{ .Params.appVersion }}</span>
+          {{ end }}
+        </div>
+        
+        <div class="app-card-actions">
+          <a href="{{ .Permalink }}" class="btn btn-secondary">View Details</a>
+          {{ if .Params.downloadOnClick }}
+          <button class="btn btn-primary" onclick="{{ safeJS .Params.downloadOnClick }}">
+            Download
+          </button>
+          {{ else }}
+          <button class="btn btn-primary" disabled>
+            Download Unavailable
+          </button>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
