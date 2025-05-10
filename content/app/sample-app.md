@@ -6,10 +6,7 @@ appName: Download Page - Capcut Mod APK
 appLogo: /images/logo.jpg
 downloadOnClick: og_load();
 appVersion: 2.573.524
-modInfo: >-
-  
-
-  # **Download Capcut Mod APK to access premium features, remove watermarks, and enjoy an ad-free editing experience. Perfect for creators looking for professional tools without limitations.**
+modInfo: ""
 screenshots:
   - /images/screenshot-2025-05-10-192004.png
 ---
